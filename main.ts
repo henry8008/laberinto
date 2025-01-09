@@ -1,0 +1,10 @@
+tiles.setCurrentTilemap(tilemap`nivel1`)
+scene.setBackgroundImage(assets.image`fondo🫱🏻🫲🏻🦑`)
+let perrito = sprites.create(assets.image`perrofacha`, SpriteKind.Player)
+controller.moveSprite(perrito)
+perrito.setScale(1, ScaleAnchor.Middle)
+tiles.placeOnTile(perrito, tiles.getTileLocation(1, 1))
+scene.cameraFollowSprite(perrito)
+scene.onOverlapTile(SpriteKind.Player, assets.image`win`, function on_overlap_tile(sprite: Sprite, location: tiles.Location) {
+    game.gameOver(true)
+})
